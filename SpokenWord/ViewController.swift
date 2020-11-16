@@ -18,9 +18,15 @@ public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     private var recognitionTask: SFSpeechRecognitionTask?
     
     private let audioEngine = AVAudioEngine()
-    
+
+    private var response = String()
+
+    private let yesNoResponses = ["yes", "no"]
+    private let quantityResponses = ["1","2","3","4","5","6","7","8","9","0"]
+    private let feelingsResponses = ["okay", "good", "bad"]
+
     @IBOutlet var textView: UITextView!
-    
+    @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var recordButton: UIButton!
     
     // MARK: View Controller Lifecycle
@@ -30,6 +36,11 @@ public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         
         // Disable the record buttons until authorization has been granted.
         recordButton.isEnabled = false
+        recordButton.layer.cornerRadius = 5
+
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(UINib(nibName: "ResponseCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ResponseCell")
     }
     
     override public func viewDidAppear(_ animated: Bool) {
@@ -98,7 +109,29 @@ public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
                 // Update the text view with the results.
                 self.textView.text = result.bestTranscription.formattedString
                 isFinal = result.isFinal
-                print("Text \(result.bestTranscription.formattedString)")
+
+                let model = VocableModel()
+                
+                guard let response = try? model.prediction(text: result.bestTranscription.formattedString) else { return }
+
+                if isFinal {
+                    print("\(result.bestTranscription.formattedString)")
+
+                    let label = response.label
+                    self.response = label
+                    self.collectionView.reloadData()
+                    self.collectionView.isHidden = false
+                    if label == "boolean" {
+                        //show yes/no
+                        print("bool")
+                    } else if label == "quantity" {
+                        // show number pad
+                        print("numbers")
+                    } else if label == "feelings" {
+                        // show good/bad/okay
+                        print("feels")
+                    }
+                }
             }
             
             if error != nil || isFinal {
@@ -158,3 +191,39 @@ public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     }
 }
 
+extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if self.response == "boolean" {
+            return 2
+        } else if  self.response == "feelings" {
+            return 3
+        } else if self.response == "quantity" {
+            return 10
+        } else {
+            return 1
+        }
+    }
+
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ResponseCell", for: indexPath) as! ResponseCollectionViewCell
+        cell.button.layer.cornerRadius = 5
+        if self.response == "boolean" {
+            cell.button.setTitle(yesNoResponses[indexPath.row], for: .normal)
+        } else if  self.response == "feelings" {
+            cell.button.setTitle(feelingsResponses[indexPath.row], for: .normal)
+        } else if self.response == "quantity" {
+            cell.button.setTitle(quantityResponses[indexPath.row], for: .normal)
+        }
+        return cell
+    }
+
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if self.response == "boolean" || self.response == "feelings" {
+            return CGSize(width:UIScreen.main.bounds.width - 100, height: CGFloat(150))
+        } else if self.response == "quantity" {
+            return CGSize(width:100, height: CGFloat(150))
+        } else {
+            return CGSize(width:100, height: CGFloat(150))
+        }
+    }
+}

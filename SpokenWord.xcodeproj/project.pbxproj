@@ -13,6 +13,10 @@
 		738998BB21515C9900E378D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 738998B921515C9900E378D8 /* Main.storyboard */; };
 		738998BD21515C9A00E378D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 738998BC21515C9A00E378D8 /* Assets.xcassets */; };
 		738998C021515C9A00E378D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 738998BE21515C9A00E378D8 /* LaunchScreen.storyboard */; };
+		D11B7599255C450900A1E853 /* VocableModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D11B7598255C450900A1E853 /* VocableModel.mlmodel */; };
+		D11B759D255C58A500A1E853 /* ResponseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D11B759C255C58A500A1E853 /* ResponseCollectionViewCell.xib */; };
+		D11B75A0255C58DD00A1E853 /* ResponseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B759F255C58DD00A1E853 /* ResponseCollectionViewCell.swift */; };
+		D11B75A3255C83F000A1E853 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D11B75A2255C83F000A1E853 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +28,12 @@
 		738998BC21515C9A00E378D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		738998BF21515C9A00E378D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		738998C121515C9A00E378D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A1D3C360A1D3B6F000000001 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE.txt; sourceTree = "<group>"; };
-		A1D45270A1D47E7000000001 /* SampleCode.xcconfig */ = {isa = PBXFileReference; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
+		A1D3C360A1D3B6F000000001 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		A1D45270A1D47E7000000001 /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
+		D11B7598255C450900A1E853 /* VocableModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = VocableModel.mlmodel; sourceTree = "<group>"; };
+		D11B759C255C58A500A1E853 /* ResponseCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResponseCollectionViewCell.xib; sourceTree = "<group>"; };
+		D11B759F255C58DD00A1E853 /* ResponseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseCollectionViewCell.swift; sourceTree = "<group>"; };
+		D11B75A2255C83F000A1E853 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +74,10 @@
 				738998B921515C9900E378D8 /* Main.storyboard */,
 				738998BC21515C9A00E378D8 /* Assets.xcassets */,
 				738998BE21515C9A00E378D8 /* LaunchScreen.storyboard */,
+				D11B7598255C450900A1E853 /* VocableModel.mlmodel */,
 				738998C121515C9A00E378D8 /* Info.plist */,
+				D11B759C255C58A500A1E853 /* ResponseCollectionViewCell.xib */,
+				D11B759F255C58DD00A1E853 /* ResponseCollectionViewCell.swift */,
 			);
 			path = SpokenWord;
 			sourceTree = "<group>";
@@ -75,8 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				A1D3C360A1D3B6F000000001 /* LICENSE.txt */,
+				D11B75A2255C83F000A1E853 /* Assets.xcassets */,
 			);
-			name = LICENSE;
 			path = LICENSE;
 			sourceTree = "<group>";
 		};
@@ -98,7 +109,6 @@
 				738998AE21515C9900E378D8 /* Sources */,
 				738998AF21515C9900E378D8 /* Frameworks */,
 				738998B021515C9900E378D8 /* Resources */,
-				9160B8209160B4D000000001,
 			);
 			buildRules = (
 			);
@@ -151,6 +161,8 @@
 				738998C021515C9A00E378D8 /* LaunchScreen.storyboard in Resources */,
 				738998BD21515C9A00E378D8 /* Assets.xcassets in Resources */,
 				736165992176725C0062D377 /* README.md in Resources */,
+				D11B759D255C58A500A1E853 /* ResponseCollectionViewCell.xib in Resources */,
+				D11B75A3255C83F000A1E853 /* Assets.xcassets in Resources */,
 				738998BB21515C9900E378D8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -164,6 +176,8 @@
 			files = (
 				738998B821515C9900E378D8 /* ViewController.swift in Sources */,
 				738998B621515C9900E378D8 /* AppDelegate.swift in Sources */,
+				D11B75A0255C58DD00A1E853 /* ResponseCollectionViewCell.swift in Sources */,
+				D11B7599255C450900A1E853 /* VocableModel.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
