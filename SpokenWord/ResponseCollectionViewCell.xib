@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzv-Tw-BMS">
-                        <rect key="frame" x="0.0" y="0.0" width="233" height="158"/>
+                        <rect key="frame" x="9.5" y="0.0" width="214" height="158"/>
                         <color key="backgroundColor" name="DefaultCellBackground"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                         <color key="textColor" name="DefaultFontColor"/>
@@ -29,7 +29,7 @@
                 <constraints>
                     <constraint firstItem="tzv-Tw-BMS" firstAttribute="centerX" secondItem="DXT-h4-XYF" secondAttribute="centerX" id="2L5-xZ-Yr0"/>
                     <constraint firstItem="tzv-Tw-BMS" firstAttribute="centerY" secondItem="DXT-h4-XYF" secondAttribute="centerY" id="3FH-UQ-1zi"/>
-                    <constraint firstItem="tzv-Tw-BMS" firstAttribute="width" secondItem="DXT-h4-XYF" secondAttribute="width" id="HsF-HF-QnC"/>
+                    <constraint firstItem="tzv-Tw-BMS" firstAttribute="width" secondItem="DXT-h4-XYF" secondAttribute="width" multiplier="0.92" id="HsF-HF-QnC"/>
                     <constraint firstItem="tzv-Tw-BMS" firstAttribute="height" secondItem="DXT-h4-XYF" secondAttribute="height" id="Kg0-X6-OkP"/>
                 </constraints>
             </collectionViewCellContentView>

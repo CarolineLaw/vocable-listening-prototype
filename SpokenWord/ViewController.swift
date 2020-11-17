@@ -203,7 +203,8 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
 
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ResponseCell", for: indexPath) as! ResponseCollectionViewCell
-        cell.layer.cornerRadius = 5
+        cell.textLabel.layer.cornerRadius = 6
+        cell.textLabel.layer.masksToBounds = true
         if self.response == "boolean" {
             cell.textLabel.text = yesNoResponses[indexPath.row]
         } else if  self.response == "feelings" {
