@@ -18,6 +18,7 @@
 		D11B75A0255C58DD00A1E853 /* ResponseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B759F255C58DD00A1E853 /* ResponseCollectionViewCell.swift */; };
 		D11B75A3255C83F000A1E853 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D11B75A2255C83F000A1E853 /* Assets.xcassets */; };
 		D124EB9425642E8E001C4D0F /* AVSpeechSynthesizer+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = D124EB9325642E8E001C4D0F /* AVSpeechSynthesizer+Shared.swift */; };
+		D124EB97256459C7001C4D0F /* VocableChoicesModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D124EB96256459C7001C4D0F /* VocableChoicesModel.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		D11B759F255C58DD00A1E853 /* ResponseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseCollectionViewCell.swift; sourceTree = "<group>"; };
 		D11B75A2255C83F000A1E853 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D124EB9325642E8E001C4D0F /* AVSpeechSynthesizer+Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVSpeechSynthesizer+Shared.swift"; sourceTree = "<group>"; };
+		D124EB96256459C7001C4D0F /* VocableChoicesModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = VocableChoicesModel.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				738998BC21515C9A00E378D8 /* Assets.xcassets */,
 				738998BE21515C9A00E378D8 /* LaunchScreen.storyboard */,
 				D11B7598255C450900A1E853 /* VocableModel.mlmodel */,
+				D124EB96256459C7001C4D0F /* VocableChoicesModel.mlmodel */,
 				738998C121515C9A00E378D8 /* Info.plist */,
 				D11B759C255C58A500A1E853 /* ResponseCollectionViewCell.xib */,
 				D11B759F255C58DD00A1E853 /* ResponseCollectionViewCell.swift */,
@@ -181,6 +184,7 @@
 				738998B621515C9900E378D8 /* AppDelegate.swift in Sources */,
 				D11B75A0255C58DD00A1E853 /* ResponseCollectionViewCell.swift in Sources */,
 				D124EB9425642E8E001C4D0F /* AVSpeechSynthesizer+Shared.swift in Sources */,
+				D124EB97256459C7001C4D0F /* VocableChoicesModel.mlmodel in Sources */,
 				D11B7599255C450900A1E853 /* VocableModel.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

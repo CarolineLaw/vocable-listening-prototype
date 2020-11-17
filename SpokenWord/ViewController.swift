@@ -24,6 +24,8 @@ public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     private let yesNoResponses = ["yes", "no"]
     private let quantityResponses = ["1","2","3","4","5","6","7","8","9","0"]
     private let feelingsResponses = ["okay", "good", "bad"]
+    let prefixes = ["Would you like", "Do you want"]
+    var choices = [String]()
 
     @IBOutlet var textView: UITextView!
     @IBOutlet var collectionView: UICollectionView!
@@ -110,12 +112,35 @@ public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
                 self.textView.text = result.bestTranscription.formattedString
                 isFinal = result.isFinal
 
-                let model = VocableModel()
+                let model = VocableChoicesModel()
                 
                 guard let response = try? model.prediction(text: result.bestTranscription.formattedString) else { return }
 
                 if isFinal {
                     print("\(result.bestTranscription.formattedString)")
+
+                    //get choices
+                    var sentence = result.bestTranscription.formattedString
+
+                    for prefix in self.prefixes {
+                        if sentence.hasPrefix(prefix) {
+                            if let rangeToRemove = sentence.range(of: prefix) {
+                                sentence.removeSubrange(rangeToRemove)
+                            }
+                        }
+                    }
+
+                    sentence = sentence.trimmingCharacters(in: .whitespaces)
+                    self.choices = sentence.components(separatedBy: "or")
+                    self.choices = self.choices.map { (choice) -> String in
+                        var sanitizedChoice = choice.trimmingCharacters(in: .whitespaces)
+                        if sanitizedChoice.hasPrefix("a ") {
+                            if let rangeToRemove = sanitizedChoice.range(of: "a ") {
+                                sanitizedChoice.removeSubrange(rangeToRemove)
+                            }
+                        }
+                        return sanitizedChoice
+                    }
 
                     let label = response.label
                     self.response = label
@@ -127,6 +152,9 @@ public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
                         print("numbers")
                     } else if label == "feelings" {
                         print("feels")
+                    } else if label == "choices" {
+                        print("choice!")
+                        print(self.choices)
                     }
                 }
             }
@@ -196,6 +224,8 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
             return 3
         } else if self.response == "quantity" {
             return 10
+        } else if self.response == "choices" {
+            return choices.count
         } else {
             return 1
         }
@@ -211,7 +241,11 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
             cell.textLabel.text = feelingsResponses[indexPath.row]
         } else if self.response == "quantity" {
             cell.textLabel.text = quantityResponses[indexPath.row]
+        } else if self.response == "choices" {
+            // get words from sentance put them in the button
+            cell.textLabel.text = choices[indexPath.row]
         }
+
         return cell
     }
 
