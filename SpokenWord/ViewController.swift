@@ -217,11 +217,19 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
         return cell
     }
 
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 8.0
+    }
+
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if self.response == "boolean" || self.response == "feelings" {
             return CGSize(width:UIScreen.main.bounds.width - 100, height: CGFloat(150))
         } else if self.response == "quantity" {
-            return CGSize(width:100, height: CGFloat(150))
+            let itemHeight = CGFloat(100)
+            let sectionInset = (collectionView.collectionViewLayout as? UICollectionViewFlowLayout)?.sectionInset.left ?? 0
+            let availableWidth = collectionView.bounds.width - sectionInset
+            let calculatedItemWidth = availableWidth / 3
+            return CGSize(width: calculatedItemWidth, height: itemHeight)
         } else {
             return CGSize(width:100, height: CGFloat(150))
         }
