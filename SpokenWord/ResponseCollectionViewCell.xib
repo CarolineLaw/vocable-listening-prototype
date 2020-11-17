@@ -12,33 +12,32 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ResponseCell" id="325-mp-KFI" customClass="ResponseCollectionViewCell" customModule="SpokenWord" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="233" height="311"/>
+            <rect key="frame" x="0.0" y="0.0" width="233" height="158"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DXT-h4-XYF">
-                <rect key="frame" x="0.0" y="0.0" width="233" height="311"/>
+                <rect key="frame" x="0.0" y="0.0" width="233" height="158"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="opg-Qr-A0c">
-                        <rect key="frame" x="9.5" y="62" width="214" height="187"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzv-Tw-BMS">
+                        <rect key="frame" x="0.0" y="0.0" width="233" height="158"/>
                         <color key="backgroundColor" name="DefaultCellBackground"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                        <state key="normal">
-                            <color key="titleColor" name="DefaultFontColor"/>
-                        </state>
-                    </button>
+                        <color key="textColor" name="DefaultFontColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="opg-Qr-A0c" firstAttribute="centerX" secondItem="DXT-h4-XYF" secondAttribute="centerX" id="1yH-Wd-lJh"/>
-                    <constraint firstItem="opg-Qr-A0c" firstAttribute="centerY" secondItem="DXT-h4-XYF" secondAttribute="centerY" id="2Fh-Vn-YmK"/>
-                    <constraint firstItem="opg-Qr-A0c" firstAttribute="width" secondItem="DXT-h4-XYF" secondAttribute="width" multiplier="0.92" id="PH6-1o-UZ0"/>
-                    <constraint firstItem="opg-Qr-A0c" firstAttribute="height" secondItem="DXT-h4-XYF" secondAttribute="height" multiplier="0.6" id="aYJ-ik-4Jc"/>
+                    <constraint firstItem="tzv-Tw-BMS" firstAttribute="centerX" secondItem="DXT-h4-XYF" secondAttribute="centerX" id="2L5-xZ-Yr0"/>
+                    <constraint firstItem="tzv-Tw-BMS" firstAttribute="centerY" secondItem="DXT-h4-XYF" secondAttribute="centerY" id="3FH-UQ-1zi"/>
+                    <constraint firstItem="tzv-Tw-BMS" firstAttribute="width" secondItem="DXT-h4-XYF" secondAttribute="width" id="HsF-HF-QnC"/>
+                    <constraint firstItem="tzv-Tw-BMS" firstAttribute="height" secondItem="DXT-h4-XYF" secondAttribute="height" id="Kg0-X6-OkP"/>
                 </constraints>
             </collectionViewCellContentView>
-            <size key="customSize" width="233" height="311"/>
+            <size key="customSize" width="233" height="158"/>
             <connections>
-                <outlet property="button" destination="opg-Qr-A0c" id="rK2-pT-1eg"/>
+                <outlet property="textLabel" destination="tzv-Tw-BMS" id="Gye-gE-zrd"/>
             </connections>
-            <point key="canvasLocation" x="312.31884057971018" y="-4.3526785714285712"/>
+            <point key="canvasLocation" x="312.31884057971018" y="-55.580357142857139"/>
         </collectionViewCell>
     </objects>
     <resources>
