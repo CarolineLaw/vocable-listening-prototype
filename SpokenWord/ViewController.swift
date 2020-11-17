@@ -122,13 +122,10 @@ public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
                     self.collectionView.reloadData()
                     self.collectionView.isHidden = false
                     if label == "boolean" {
-                        //show yes/no
                         print("bool")
                     } else if label == "quantity" {
-                        // show number pad
                         print("numbers")
                     } else if label == "feelings" {
-                        // show good/bad/okay
                         print("feels")
                     }
                 }
@@ -206,13 +203,13 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
 
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ResponseCell", for: indexPath) as! ResponseCollectionViewCell
-        cell.button.layer.cornerRadius = 5
+        cell.layer.cornerRadius = 5
         if self.response == "boolean" {
-            cell.button.setTitle(yesNoResponses[indexPath.row], for: .normal)
+            cell.textLabel.text = yesNoResponses[indexPath.row]
         } else if  self.response == "feelings" {
-            cell.button.setTitle(feelingsResponses[indexPath.row], for: .normal)
+            cell.textLabel.text = feelingsResponses[indexPath.row]
         } else if self.response == "quantity" {
-            cell.button.setTitle(quantityResponses[indexPath.row], for: .normal)
+            cell.textLabel.text = quantityResponses[indexPath.row]
         }
         return cell
     }
@@ -224,6 +221,22 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
             return CGSize(width:100, height: CGFloat(150))
         } else {
             return CGSize(width:100, height: CGFloat(150))
+        }
+    }
+
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+        var utterance = String()
+            if self.response == "boolean" {
+                utterance = self.yesNoResponses[indexPath.row]
+            } else if self.response == "feelings" {
+                utterance = self.feelingsResponses[indexPath.row]
+            } else if self.response == "quantity" {
+                utterance = self.quantityResponses[indexPath.row]
+            }
+
+        DispatchQueue.global(qos: .userInitiated).async {
+            AVSpeechSynthesizer.shared.speak(utterance, language: "en")
         }
     }
 }

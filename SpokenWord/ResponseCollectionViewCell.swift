@@ -10,5 +10,5 @@ import UIKit
 
 class ResponseCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet var button: UIButton!
+    @IBOutlet var textLabel: UILabel!
 }
