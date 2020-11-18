@@ -38,7 +38,7 @@ public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         
         // Disable the record buttons until authorization has been granted.
         recordButton.isEnabled = false
-        recordButton.layer.cornerRadius = 5
+        recordButton.layer.cornerRadius = 6
 
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -254,7 +254,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
     }
 
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if self.response == "boolean" || self.response == "feelings" {
+        if self.response == "boolean" || self.response == "feelings" || self.response == "choices" {
             return CGSize(width:UIScreen.main.bounds.width - 100, height: CGFloat(150))
         } else if self.response == "quantity" {
             let itemHeight = CGFloat(100)

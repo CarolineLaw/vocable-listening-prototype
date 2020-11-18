@@ -32,17 +32,17 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="n1D-GC-6tq">
-                                <rect key="frame" x="16" y="0.0" width="343" height="120"/>
+                                <rect key="frame" x="16" y="0.0" width="343" height="150"/>
                                 <color key="backgroundColor" name="Background"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="RYC-bY-ki3"/>
+                                    <constraint firstAttribute="height" constant="150" id="RYC-bY-ki3"/>
                                 </constraints>
                                 <color key="textColor" name="DefaultFontColor"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Fc6-Jc-Tpc">
-                                <rect key="frame" x="20" y="140" width="335" height="407"/>
+                                <rect key="frame" x="20" y="170" width="335" height="377"/>
                                 <color key="backgroundColor" name="Background"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="bo1-9E-zPc">
                                     <size key="itemSize" width="128" height="128"/>
